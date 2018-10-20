@@ -5,4 +5,7 @@ class HomeController < ApplicationController
     @pokemon = trainerless_pokemon.sample
   end
 
+  def demo
+    render plain: "go go go!" + params[:id]
+  end
 end
