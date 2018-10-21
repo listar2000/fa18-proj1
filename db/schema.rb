@@ -14,7 +14,8 @@ ActiveRecord::Schema.define(version: 2018_10_18_230839) do
 
   create_table "pokemons", force: :cascade do |t|
     t.string "name"
-    t.integer "level"
+    t.integer "health", default: 100, null: false
+    t.integer "level", default: 7
     t.integer "trainer_id"
     t.integer "ndex"
     t.datetime "created_at", null: false

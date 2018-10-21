@@ -3,14 +3,24 @@
 <p>Email: <%= @trainer.email if @trainer.email %></p>
 
 <% @trainer.pokemons.each do |p| %>
-  <% if p.ndex %>
-    <%= image_tag("pokemon/#{p.ndex}.png", alt: "#{p.name}") %>
-  <% end %>
-  <div>Name: <b><%= p.name %></b>   Level: <b><%= p.level %></b></div>
+  <div class="panel medium-6 columns">
+    <% if p.ndex %>
+      <%= image_tag("pokemon/#{p.ndex}.png", alt: "#{p.name}") %>
+    <% end %>
+    <div>Name: <b><%= p.name %></b>   Level: <b><%= p.level %></b></div>
+    <div>Health: <b><%= p.health %></b></div>
+    <%= link_to 'damage it', damage_path(id: p.id), :method => "post", class: "button tiny button alert" %>
+  </div>
 <% end %>
+
+<%= link_to 'Want more? Create one!', new_pokemon_path, :method => "get", class: "button expand"%>
 
 <style>
   b {
     color: red;
+  }
+  .button.alert {
+    margin-top: 5px;
+    font-size: 14px;
   }
 </style>

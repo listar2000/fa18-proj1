@@ -14,9 +14,11 @@ The function of this line is to create a HTML `button` which send a patch reques
 
 # Question 3: What would you name your own Pokemon?
 
-DaddyDenero
+DaddyDenero (A Pokemon that attacks the opponent with Python/Scheme codes)
 
 # Question 4: What did you pass into the redirect_to? If it is a path, what did that path need? If it is not a path, why is it okay not to have a path here?
+
+I pass into a helper `trainer_path` into it with the id of the trainer (so that we can redirect to the page of the original trainer)
 
 # Question 5: Explain how putting this line "flash[:error] = @pokemon.errors.full_messages.to_sentence" shows error messages on your form.
 
