@@ -10,6 +10,7 @@
     <div>Name: <b><%= p.name %></b>   Level: <b><%= p.level %></b></div>
     <div>Health: <b><%= p.health %></b></div>
     <%= link_to 'damage it', damage_path(id: p.id), :method => "post", class: "button tiny button alert" %>
+    <%= link_to 'cure it', cure_path(id: p.id), :method => "post", class: "button tiny button success" %>
   </div>
 <% end %>
 
@@ -19,7 +20,7 @@
   b {
     color: red;
   }
-  .button.alert {
+  .button.tiny {
     margin-top: 5px;
     font-size: 14px;
   }

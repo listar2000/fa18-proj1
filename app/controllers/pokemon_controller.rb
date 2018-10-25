@@ -20,6 +20,18 @@ class PokemonController < ApplicationController
     redirect_to trainer_path(id: p.trainer_id)
   end
 
+  def cure
+    pid = params[:id]
+    p = Pokemon.find_by(id:pid)
+    if p.health > 90
+      p.health = 100
+    else
+      p.health += 10
+    end
+    p.save
+    redirect_to trainer_path(id: p.trainer_id)
+  end
+
   def new
 
   end
