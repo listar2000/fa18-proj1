@@ -9,3 +9,6 @@
   <% end -%>
   <%= f.button :submit, class: "create-pokemon-btn" %>
 <% end %>
+<% if @msg %>
+  <script>alert('Pokemon name cannot be null or redundant with existing ones!')</script>
+<% end %>

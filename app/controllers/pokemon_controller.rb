@@ -33,14 +33,21 @@ class PokemonController < ApplicationController
   end
 
   def new
-
+    if params.has_key?(:msg)
+      @msg = true
+    end
   end
 
   def create
-    p = Pokemon.new(pokemon_params)
-    p.trainer_id = current_trainer.id
-    p.save
-    redirect_to trainer_path(id: p.trainer_id)
+    @poke_params = pokemon_params
+    if @poke_params[:name].blank? or Pokemon.exists?(name: @poke_params[:name])
+      redirect_to new_pokemon_path(id: current_trainer.id, msg: true)
+    else
+      @pokemon = Pokemon.new(pokemon_params)
+      @pokemon.trainer_id = current_trainer.id
+      @pokemon.save
+      redirect_to trainer_path(id: @pokemon.trainer_id)
+    end
   end
 
   # def demo

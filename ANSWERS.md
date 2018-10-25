@@ -22,6 +22,8 @@ I pass into a helper `trainer_path` into it with the id of the trainer (so that 
 
 # Question 5: Explain how putting this line "flash[:error] = @pokemon.errors.full_messages.to_sentence" shows error messages on your form.
 
+I didn't figure out how to use this... Instead, I try to send a error signal to the controller every time when the creation fails, resulting in a javascript alert box at the top of the page (using embedded `<script></script`)
+
 # Give us feedback on the project and decal below!
 
 # Extra credit: Link your Heroku deployed app
